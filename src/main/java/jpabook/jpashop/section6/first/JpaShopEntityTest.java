@@ -1,4 +1,4 @@
-package jpabook.jpashop.section6.zeroth;
+package jpabook.jpashop.section6.first;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -31,9 +31,9 @@ public class JpaShopEntityTest {
             //`Order`를 찾아온다.
             Order findOrder = em.find(Order.class, 1L);
             //찾아온 `Order`에서 `memberId`를 가져온다.
-            Long findOrderMemberId = findOrder.getMemberId();
+            Member member = findOrder.getMember();
             //`memberId`를 통해서 다시 데이터베이스에서 `Member`를 가져온다.
-            Member findMember = em.find(Member.class, findOrderMemberId);
+            Member findMember = em.find(Member.class, member.getId());
             System.out.println("== `객체 설계`를 `테이블 설계`에 맞춘 방식 시점 종료 ==");
 
             tx.commit();

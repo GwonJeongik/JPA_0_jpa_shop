@@ -1,12 +1,16 @@
 package jpabook.jpashop;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * 0. 실전 예제 1 - 요구사항 분석과 기본 맵핑
+ * 1. 실전 예제 1 - 요구사항 분석과 기본 맵핑
+ */
+
+/**
+ * 4. 실전 예제 2 - 연관관계 맵핑 시작
  */
 @Entity
 public class Member {
@@ -15,6 +19,10 @@ public class Member {
     @GeneratedValue
     @Column(name = "member_id")
     private Long id;
+
+    @OneToMany(mappedBy = "member")
+    private List<Order> orders = new ArrayList<>();
+
     @Column(length = 10)
     private String name;
     private String city;
