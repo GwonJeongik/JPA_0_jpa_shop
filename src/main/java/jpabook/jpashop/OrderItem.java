@@ -11,7 +11,7 @@ import jakarta.persistence.*;
  */
 
 @Entity
-public class OrderItem {
+public class OrderItem extends BasicEntity{
 
     @Id
     @GeneratedValue

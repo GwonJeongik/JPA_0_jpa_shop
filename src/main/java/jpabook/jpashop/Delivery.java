@@ -3,7 +3,7 @@ package jpabook.jpashop;
 import jakarta.persistence.*;
 
 @Entity
-public class Delivery {
+public class Delivery extends BasicEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

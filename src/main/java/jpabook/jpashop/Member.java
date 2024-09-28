@@ -13,7 +13,7 @@ import java.util.List;
  * 4. 실전 예제 2 - 연관관계 맵핑 시작
  */
 @Entity
-public class Member {
+public class Member extends BasicEntity{
 
     @Id
     @GeneratedValue

@@ -7,9 +7,13 @@ import java.util.List;
 
 /**
  * 0. 실전 예제 1 - 요구사항 분석과 기본 맵핑
+ * <p>
+ * 8-3. 실전 예제4 - 상속관계 맵핑
  */
 @Entity
-public class Item {
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn
+public class Item extends BasicEntity {
 
     @Id
     @GeneratedValue
